@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Users List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content *ngFor="let user of listUsuarios">
+      <img  alt="Silhouette of mountains" src="https://static.vecteezy.com/system/resources/thumbnails/013/149/369/small_2x/avatar-interface-user-abstract-flat-color-icon-template-free-vector.jpg" />
+      <ion-label style="font-size: 15px;">{{user.name}}</ion-label>
+      <br>
+      <ion-label style="font-size: 15px;">{{user.email}}</ion-label>
+      <br>
+      <ion-label style="font-size: 15px;">{{user.website}}</ion-label>
+      <br>
+      <ion-label style="font-size: 15px;">{{user.company.name}}</ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

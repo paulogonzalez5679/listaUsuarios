@@ -6,7 +6,7 @@ import {
   FormBuilder
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavDelegate } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,6 @@ export class LoginPage implements OnInit {
 
   formularioLogin:  FormGroup;
   usuario:any;
-  // alertController: AlertController;
 
   constructor(public fb: FormBuilder, public alertController: AlertController, private router: Router) {
 
@@ -288,8 +287,13 @@ export class LoginPage implements OnInit {
     this.usuario.forEach(usuario => {
 
       if(f.username == usuario.username && f.email == usuario.email){
-        console.log("Ingreso el usuario")
         this.router.navigate(['tabs']);
+        localStorage.setItem('actualUser', JSON.stringify(usuario.username))
+        localStorage.setItem('actualUserName', JSON.stringify(usuario.name))
+        localStorage.setItem('actualUserPhone', JSON.stringify(usuario.phone))
+        localStorage.setItem('actualUserWeb', JSON.stringify(usuario.website))
+        console.log("Ingreso el usuario")
+
       }
       // else{
       //   const alert = await this.alertController.create({
@@ -316,6 +320,11 @@ export class LoginPage implements OnInit {
     //   });
 
     //   await alert.present();
-    // }
+    // }\
+
   }
+  navegar()
+    {
+      this.router.navigate(['tabs']);
+    }
 }

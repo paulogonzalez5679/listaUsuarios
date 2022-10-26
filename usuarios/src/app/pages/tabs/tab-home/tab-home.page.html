@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentModal()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+<ion-card>
+  <img style="max-width: 60%;" src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1601/stalkerstudent160101173/50961996-vector-icono-de-usuario-estilo-de-dise%C3%B1o-plano-eps-10.jpg" />
+  <ion-card-header>
+    <ion-card-title>
+      {{usuarioAlias}}
+    </ion-card-title>
+
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-label>Name:</ion-label>
+      <ion-item>{{usuarioNombre}} </ion-item>
+      <ion-label>Phone:</ion-label>
+      <ion-item>{{usuarioTelefono}} </ion-item>
+      <ion-label>Website</ion-label>
+      <ion-item>{{usuarioWeb}} </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>
